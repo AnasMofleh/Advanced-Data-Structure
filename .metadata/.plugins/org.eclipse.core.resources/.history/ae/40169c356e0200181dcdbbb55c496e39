@@ -1,0 +1,5 @@
+package textproc;
+
+public class WordCountComperator {
+	wordList.sort(new WordCountComperator());
+}

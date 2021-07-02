@@ -1,0 +1,92 @@
+package map;
+
+import java.util.Vector;
+
+public class SimpleHashMap<K, V> implements Map<K, V> {
+
+	Entry<K, V>[] table;
+//	public Vector<Map.Entry<K,V>> table;
+	public int capacity = 16;
+	public double loadFactor = 0.75;
+	
+	SimpleHashMap(){
+		table = (Entry<K,V>[]) new Entry[capacity];
+//		table = new Vector<Map.Entry<K, V>>(capacity);
+	}
+	
+	SimpleHashMap(int capacity){
+		this.capacity = capacity;
+		table = (Entry<K,V>[]) new Entry[capacity];
+//		table = new Vector<Map.Entry<K, V>>(capacity);
+	}
+	
+	
+	
+	private static class Entry<K, V> implements Map.Entry<K,V> {
+		private K key;
+		private V value;
+		private Entry<K,V> next;
+		
+		public Entry(Entry<K,V> e) {
+			key = e.getKey();
+			value = e.getValue();
+			next = this; //?????????eller NULL?????????????
+		}
+		
+		@Override
+		public String toString(){
+			return key + " = " + value;
+		}
+
+		@Override
+		public K getKey() {
+			// TODO Auto-generated method stub
+			return key;
+		}
+
+		@Override
+		public V getValue() {
+			// TODO Auto-generated method stub
+			return value;
+		}
+
+		@Override
+		public V setValue(V value) {
+			// TODO Auto-generated method stub
+			this.value = value;
+			return this.value;    //Se upp här med this
+		}
+
+	}
+
+	@Override
+	public V get(Object arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public V put(K arg0, V arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public V remove(Object arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
